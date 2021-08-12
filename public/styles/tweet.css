@@ -49,3 +49,13 @@ footer {
 .buttons :hover {
   color: #cfb10c;
 }
+
+#error {
+  border: 2px solid red;
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+#errortext {
+  color: red;
+}

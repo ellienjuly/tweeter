@@ -34,6 +34,7 @@ const createTweetElement = function(data) {
   return $tweet;
 }
 
+//add the new post to the tweet list
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
@@ -43,27 +44,29 @@ const loadTweets = function() {
     });
 }
 
+//XSS
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+//
 $(document).ready(function() {
-
   $("#tweet-post").submit(function(event) {
     event.preventDefault();
-    let tweetText = $(this).serialize();
-    console.log(tweetText.length);
 
-    $.post('/tweets', tweetText, function (){
-      location.reload();
-    })
-    // if(5 < tweetText.length < 145 || tweetText) {
-    //   success;
-    // }else{
-    //   alert('invalid')
-    // }
+    if ($('#tweet-text').val().length > 140  ) {
+      alert('You cannot input more than 140 characters');
+    } else if (!$('#tweet-text').val()) {
+      alert('Your tweets cannot be empty');
+    } else {
+      let tweetText = $(this).serialize();
+
+      $.post('/tweets', tweetText, function (){
+        location.reload();
+      })
+    }
   });
   
   loadTweets();

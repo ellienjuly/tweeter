@@ -50,9 +50,12 @@
     </header>
 
     <main>
+      <div id="error">
+        <p id="errortext"><i class="fas fa-exclamation-triangle"></i> You cannot input more than 140 characters</p>
+      </div>
       <section class="new-tweet">
         <!-- <h2>Compose Tweet</h2> -->
-        <p>Error</p>
+        <!-- <p>Error</p> -->
         <form action="/tweets" method="POST" id="tweet-post">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
