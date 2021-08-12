@@ -22,7 +22,7 @@ const createTweetElement = function(data) {
       <hr>
 
       <footer>
-        <div class="posted"><h3>${data.created_at}</h3></div> 
+        <div class="posted"><h3>${timeago.format(data.created_at)}</h3></div> 
         <div class="buttons">
           <i class="fas fa-flag"></i> 
           <i class="fas fa-retweet"></i> 
@@ -51,15 +51,30 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
-//
+const longError = function() {
+  $('#longError').slideDown("slow");
+  $('#longError').delay(3000).slideUp();
+}
+
+const emptyError = function() {
+  $('#emptyError').slideDown("slow");
+  $('#emptyError').delay(3000).slideUp();
+}
+
+//get tweet text from html and post them
 $(document).ready(function() {
+  $('#longError').hide();
+  $('#emptyError').hide();
+  
   $("#tweet-post").submit(function(event) {
     event.preventDefault();
-
+    
+    //form validation 
     if ($('#tweet-text').val().length > 140  ) {
-      alert('You cannot input more than 140 characters');
+      longError();
     } else if (!$('#tweet-text').val()) {
-      alert('Your tweets cannot be empty');
+      // alert('Your tweets cannot be empty');
+      emptyError();
     } else {
       let tweetText = $(this).serialize();
 
