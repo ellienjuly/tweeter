@@ -6,6 +6,7 @@
 
  
 const createTweetElement = function(data) {
+  let text = data.content.text;
   let $tweet = `
     <div class="tweet">
       <header class="tweet-header">
@@ -16,7 +17,7 @@ const createTweetElement = function(data) {
       </header>
 
       <div>
-        <p class="tweet-body">${data.content.text}</p>
+        <p class="tweet-body">${escape(text)}</p>
       </div>
       <hr>
 
@@ -36,29 +37,34 @@ const createTweetElement = function(data) {
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
-      
       for (let tweet of tweets) {
         $('article').append(createTweetElement(tweet));
       }
-  });
+    });
 }
 
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $(document).ready(function() {
+
   $("#tweet-post").submit(function(event) {
     event.preventDefault();
     let tweetText = $(this).serialize();
-    console.log(tweetText);
+    console.log(tweetText.length);
 
-    if (tweetText.length){
-      $.ajax({
-        type: "POST",
-        url: '/tweets',
-        data: tweetText,
-        datatype: 'json'
-      }); 
-    } else {
-      alert('Invalid message');
-    }
+    $.post('/tweets', tweetText, function (){
+      location.reload();
+    })
+    // if(5 < tweetText.length < 145 || tweetText) {
+    //   success;
+    // }else{
+    //   alert('invalid')
+    // }
   });
+  
   loadTweets();
-})
+});
