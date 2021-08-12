@@ -1,0 +1,13 @@
+header.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background-color: #ff8c8c;
+  background-image: url("../images/white-diamond-dark.png");
+}
+
+header .tweet {
+  padding-top: 50px;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)http://localhost:8080/?text=If+I+have+seen+further+it+is+by+standing+on+the+shoulders+of+giants -->
+<html lang="en"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/normalize.min.css" type="text/css">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Tweeter - Home Page_files/css2" rel="stylesheet">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/layout.css" type="text/css">
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/nav.css" type="text/css">
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/header.css" type="text/css">
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/new-tweet.css" type="text/css">
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/tweet.css" type="text/css">
+
+
+    <!-- External JS -->
+    <script src="./Tweeter - Home Page_files/jquery.min.js"></script>
+    <script src="./Tweeter - Home Page_files/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="./Tweeter - Home Page_files/client.js"></script>
+    <script type="text/javascript" src="./Tweeter - Home Page_files/composer-char-counter.js"></script>
+  </head>
+
+  <body class="vsc-initialized">
+    <!-- Top nav bar (fixed) -->
+    <nav>
+      <div class="logo"><span>tweeter</span></div>
+      <div class="text"><p>Write  a new tweet</p>
+      <center><i class="fas fa-angle-double-down"></i></center></div>
+    </nav>
+    <header class="top">
+      <div class="image">
+        <img src="./Tweeter - Home Page_files/profile-hex.png">
+      </div>
+      <div class="header-text">
+        <h2>Ellie Nam</h2>
+      </div>
+    </header>
+
+    <main>
+      <section class="new-tweet">
+        <!-- <h2>Compose Tweet</h2> -->
+        <form action="http://localhost:8080/tweets/" method="POST" id="tweet-post">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="tweet-button">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <!-- individual tweet here -->
+      <article>
+      <header class="tweet-header">
+        <div class="avatar"><img src="./Tweeter - Home Page_files/73hZDYK.png">
+          <p>Newton</p> 
+        </div>
+        <div class="handle"><h4>@SirIsaac</h4></div>
+      </header>
+
+      <div>
+        <p class="tweet-body">If I have seen further it is by standing on the shoulders of giants</p>
+      </div>
+      <hr>
+
+      <footer>
+        <div class="posted"><h3>just now</h3></div> 
+        <div class="buttons">
+          <i class="fas fa-flag"></i> 
+          <i class="fas fa-retweet"></i> 
+          <i class="fas fa-heart"></i>
+        </div>
+      </footer>
+  
+      <header class="tweet-header">
+        <div class="avatar"><img src="./Tweeter - Home Page_files/73hZDYK.png">
+          <p>Another</p> 
+        </div>
+        <div class="handle"><h4>@Hello</h4></div>
+      </header>
+
+      <div>
+        <p class="tweet-body">I hate my life</p>
+      </div>
+      <hr>
+
+      <footer>
+        <div class="posted"><h3>just now</h3></div> 
+        <div class="buttons">
+          <i class="fas fa-flag"></i> 
+          <i class="fas fa-retweet"></i> 
+          <i class="fas fa-heart"></i>
+        </div>
+      </footer>
+  </article>
+
+    </main>
+    
+
+    <!-- Page-specific (main) content here -->
+    <main class="container"></main>
+  
+
+</body></html>

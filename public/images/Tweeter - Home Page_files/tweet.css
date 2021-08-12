@@ -1,7 +1,12 @@
 article {
-  display: flex;
-  flex-direction: column-reverse;
   margin-top: 50px;
+  padding: 15px;
+  border: 4px solid;
+}
+
+article:hover {
+  box-shadow: 10px 10px #afbbe3;
+  transition: box-shadow 0.3s ease-in;
 }
 
 hr {
@@ -33,17 +38,6 @@ footer {
 
 .tweet-body {
   padding: 0 10px 0 10px;
- 
-}
-
-.tweet {
-  padding: 10px;
-  border: 4px solid;
-  margin-bottom: 25px;
-}
-.tweet:hover {
-  box-shadow: 10px 10px #afbbe3;
-  transition: box-shadow 0.3s ease-in;
 }
 
 .buttons :hover {
