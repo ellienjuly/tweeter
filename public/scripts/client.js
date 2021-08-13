@@ -98,6 +98,9 @@ $(document).ready(function() {
     } else {
       $('#totop').hide();
     }
+    $('#totop').on('click', function() {
+      $(window).scrollTop(0);
+    })
   });
 
     
