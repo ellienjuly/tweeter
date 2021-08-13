@@ -17,24 +17,32 @@ nav {
 
 .logo {
   display: flex;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
 
-.text {
+.toggle {
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: 0;
+  transition: top ease 0.2s;
 }
-.text p {
+
+.toggle p {
   margin: 0;
   padding: 0;
 }
 
-.text i {
+.toggle i {
   color: red;
+}
+
+.toggle i :hover {
+  top: 10px;
 }
 
 @media only screen and (max-width: 1024px) {
   nav {
-    background: transparent
+    background: transparent;
   }
 }

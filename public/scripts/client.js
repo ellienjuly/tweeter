@@ -52,12 +52,12 @@ const escape = function(str) {
 };
 
 const longError = function() {
-  $('#longError').slideDown("slow");
+  $('#longError').slideDown();
   $('#longError').delay(3000).slideUp();
 }
 
 const emptyError = function() {
-  $('#emptyError').slideDown("slow");
+  $('#emptyError').slideDown();
   $('#emptyError').delay(3000).slideUp();
 }
 
@@ -65,6 +65,8 @@ const emptyError = function() {
 $(document).ready(function() {
   $('#longError').hide();
   $('#emptyError').hide();
+  $('#newtweet').hide();
+  $('#totop').hide();
   
   $("#tweet-post").submit(function(event) {
     event.preventDefault();
@@ -83,6 +85,23 @@ $(document).ready(function() {
       })
     }
   });
-  
+
+  //open up tweet compose section
+  $('.toggle').on('click', function() {
+    $('#newtweet').slideDown();
+  });
+
+  // scroll to top
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 100) {
+      $('#totop').show();
+    } else {
+      $('#totop').hide();
+    }
+  });
+
+    
+
+
   loadTweets();
 });

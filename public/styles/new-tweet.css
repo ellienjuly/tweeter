@@ -1,7 +1,7 @@
 button {
   width: auto;
   height: auto;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   border: none;
   background: #4056a1;
   color: white;
@@ -11,26 +11,18 @@ label {
   font-weight: 600;
 }
 
-.new-tweet {
-  display: flex; 
-  justify-content: center;
-  flex-grow: 1;
-  width: auto;
-  flex-direction: column;
-}
-
 .tweet-button {
   display: flex;
   justify-content: space-between;
 }
 
 .counter {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   color: #545149;
 }
 
 .counter-over {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   color: Red;
 }
 
@@ -39,4 +31,8 @@ label {
   border-bottom: 4px solid #545149;
   width: 100%;
   background: transparent;
+}
+
+#newtweet {
+  margin-bottom: 50px;
 }

@@ -1,0 +1,15 @@
+#totop {
+  display: hide;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  border: none;
+  background-color: red;
+  border-radius: 50px;
+  height: 70px;
+  width: 70px;
+  -webkit-box-shadow: 2px 2px 7px -5px #000000; 
+  box-shadow: 2px 2px 7px -5px #000000;
+  font-size: 2rem
+}
